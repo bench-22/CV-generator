@@ -102,6 +102,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "cvGenerator:build:production",
+            "firebaseProject": "cv-generator-uruit",
+            "firebaseHostingSite": "cv-generator-uruit"
+          }
         }
       }
     }
