@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cv-generator-uruit": {
+      "hosting": {
+        "cvGenerator": [
+          "cv-generator-uruit"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cv-generator-uruit"
+  }
+}
