@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {SharedModule} from "./shared/shared.module";
+import {RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module} from "ng-recaptcha";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {SharedModule} from "./shared/shared.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    RecaptchaV3Module,
     StoreModule.forRoot({}, {}),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

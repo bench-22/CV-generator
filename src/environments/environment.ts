@@ -21,5 +21,7 @@ export const environment = {
   },
   baseURL: "http://localhost:8080/api/v1/",
   endpoints: {},
-  storage: {}
+  storage: {},
+  recaptcha_v3_public: '6LcT7pwjAAAAAGmMvKdhodwgdKBKYs53YL_XRa7b',
+  recaptcha_v3_private: '6LcT7pwjAAAAAEW5uXhs1OUtWK_Pmzj3vRyNOB_m',
 };
