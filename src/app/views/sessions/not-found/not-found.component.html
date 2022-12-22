@@ -1,1 +1,25 @@
-<p>not-found works!</p>
+<div class="page-wrap h-full">
+  <div class="session-form-hold">
+    <div class="text-center pt-8 pb-16 center-contect">
+      <div class="fix">
+        <mat-icon class="error-icon" color="warn">error</mat-icon>
+        <div class="error-text">
+          <h1 class="error-title">404</h1>
+          <h1 class="error-subtitle">Página no encontrada!</h1>
+        </div>
+      </div>
+      <div class="error-actions center-contect mt-16">
+        <button
+          mat-raised-button
+          color="primary"
+          class="mb-16 mr-8"
+          [routerLink]="['/']">Ir a Inicio
+        </button>
+        <button
+          mat-raised-button
+          color="warn">Reportar el Problema
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

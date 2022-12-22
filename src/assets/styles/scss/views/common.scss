@@ -79,6 +79,26 @@
   padding-left: 2px;
 }
 
+.p-16 {
+  padding: 16px;
+}
+
+.p-12 {
+  padding: 12px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.p-4 {
+  padding: 4px;
+}
+
+.p-2 {
+  padding: 2px;
+}
+
 //margin
 .mb-16 {
   margin-bottom: 16px;
@@ -160,8 +180,29 @@
   margin-left: 2px;
 }
 
-.border-radius {
-  border-radius: 10px
+.m-16 {
+  margin: 16px;
+}
+
+.m-12 {
+  margin: 12px;
+}
+
+.m-8 {
+  margin: 8px;
+}
+
+.m-4 {
+  margin: 4px;
+}
+
+.m-2 {
+  margin: 2px;
+}
+
+//class generic
+.border-radius-10 {
+  border-radius: 10px;
 }
 
 .form {
@@ -184,6 +225,7 @@
 //ELEMENTS HTML
 a {
   color: #7C57F4;
+  text-decoration: none;
 }
 
 button {
