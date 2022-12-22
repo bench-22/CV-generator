@@ -1,0 +1,35 @@
+<div class="app-admin-wrap">
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+
+      <div class="main-content-wrap" id="main-content-wrap">
+        <div class="rightside-content-hold" id="rightside-content-hold">
+          <!-- View Loader -->
+          <div class="view-loader" *ngIf="isModuleLoading" style="position:fixed;"
+               fxLayout="column" fxLayoutAlign="center center">
+            <div class="spinner">
+              <div class="double-bounce1 mat-bg-accent"></div>
+              <div class="double-bounce2 mat-bg-primary"></div>
+            </div>
+          </div>
+          <div class="container-dynamic">
+            <router-outlet></router-outlet>
+          </div>
+          <span class="m-auto"></span>
+        </div>
+        <span class="m-auto"></span>
+      </div>
+      <!-- View overlay for mobile navigation -->
+      <div class="sidebar-backdrop"></div>
+    </mat-sidenav-content>
+
+
+    <mat-sidenav #notificationPanel mode="over" class="" position="end">
+      <div class="nofication-panel" fxLayout="column">
+        <!--        <app-notifications [notificPanel]="notificationPanel"></app-notifications>-->
+      </div>
+    </mat-sidenav>
+
+    <!--    <egret-notifications2></egret-notifications2>-->
+  </mat-sidenav-container>
+</div>
