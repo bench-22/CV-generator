@@ -1,0 +1,81 @@
+<div class="page-wrap h-full">
+  <div class="session-form-hold">
+    <mat-card class="border-radius">
+      <mat-card-content>
+        <div class="center-contect">
+          <img
+            width="150px"
+            src="assets/images/logo/image.png"
+            alt="Logo"
+          />
+        </div>
+        <div class="text-center pt-8 pb-16 center-contect">
+          <h2>CV Generator</h2>
+          <p>Iniciar sesión con su cuenta</p>
+        </div>
+        <form [formGroup]="formGroup" (ngSubmit)="signing()">
+          <div class="form-field-size">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Correo Electrónico</mat-label>
+              <input
+                matInput
+                name="username"
+                formControlName="username"
+                placeholder="Correo Electrónico"
+                value=""
+              />
+              <mat-error *ngIf="
+                formGroup.controls['username'].hasError('required') &&
+                formGroup.controls['username'].touched
+              ">Correo requerido.
+              </mat-error>
+              <mat-error *ngIf="
+                formGroup.controls['username'].hasError('pattern') &&
+                formGroup.controls['username'].touched
+              ">Formato incorrecto.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-field-size">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input
+                name="password"
+                matInput
+                placeholder="Contraseña"
+                value=""
+                [type]="hide ? 'password' : 'text'"
+                formControlName="password"
+              />
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
+                      [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error
+                *ngIf="
+                formGroup.controls['password'].hasError('required') &&
+                formGroup.controls['password'].touched">
+                Contraseña requerida.
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            class="mat-primary full-width mb-16 mt-16"
+            [disabled]="formGroup.invalid"
+          >
+            Ingresar
+          </button>
+          <div class="text-center">
+            <a [routerLink]="'/sessions/forgot-password'"
+               class="mat-primary text-center full-width"
+            >¿Olvidó su Contraseña?</a>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
