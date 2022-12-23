@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'cv/module/admin',
     component: AdminLayoutComponent,
     canActivate: [UserIsLoggedIn],
-    // loadChildren: () => import('./views/administration/admin.module').then(m => m.AdminModule),
+    loadChildren: () => import('./views/admin/admin.module').then(m => m.AdminModule),
     data: {title: 'Admin'}
   },
   {

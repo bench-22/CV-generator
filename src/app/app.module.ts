@@ -11,6 +11,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {SharedModule} from "./shared/shared.module";
 import {RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module} from "ng-recaptcha";
+import {AngularFireModule} from "@angular/fire/compat";
 
 @NgModule({
   declarations: [
@@ -23,11 +24,14 @@ import {RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module} from "ng-recaptcha";
     SharedModule,
     RecaptchaV3Module,
     StoreModule.forRoot({}, {}),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [
+    {provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptcha_v3_public},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

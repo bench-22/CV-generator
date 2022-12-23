@@ -48,7 +48,7 @@
                 [type]="hide ? 'password' : 'text'"
                 formControlName="password"
               />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
                       [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
