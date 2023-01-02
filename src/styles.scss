@@ -1,6 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
-
+@use '@angular/material' as mat;
+@import "./assets/styles/scss/colors/palette-custom";
 @import "assets/styles/scss/app";
+
+$my-primary: mat.define-palette($md-uitdarkgreen);
+$my-primary-form-field: mat.define-palette($md-uitviolet);
+$my-accent: mat.define-palette($md-uitlightgreen);
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn
+  ),
+  density: 0,
+))
+
+;$my-theme-form-field: mat.define-light-theme((
+  color: (
+    primary: $my-primary-form-field,
+    accent: $my-accent,
+    warn: $my-warn
+  ),
+  density: 0,
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($my-theme);
+
+@include mat.button-theme($my-theme);
+@include mat.strong-focus-indicators-theme($my-theme);
+@include mat.input-theme($my-theme);
+@include mat.form-field-theme($my-theme-form-field);
+@include mat.core();
+// Include the theme mixins for other components you use here.
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+//@font-face {
+//  font-family: '';
+//  src: url("");
+//}

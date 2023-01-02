@@ -1,12 +1,13 @@
 <div class="page-wrap h-full">
   <div class="session-form-hold">
-    <mat-card class="border-radius-10">
+    <mat-card class="border-radius-20">
       <mat-card-content>
         <div class="center-contect">
-          <img
-            width="150px"
-            src="assets/images/logo/image.png"
-            alt="Logo"
+          <img ngSrc="assets/images/logo/image.png"
+               width="180"
+               height="50"
+               alt="Logo"
+               priority
           />
         </div>
         <div class="text-center pt-8 pb-16 center-contect">
@@ -48,7 +49,8 @@
                 [type]="hide ? 'password' : 'text'"
                 formControlName="password"
               />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'"
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                      [attr.aria-label]="'Ocultar contraseña'"
                       [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
@@ -63,7 +65,6 @@
           <button
             type="submit"
             mat-raised-button
-            color="primary"
             class="mat-primary full-width mb-16 mt-16"
             [disabled]="formGroup.invalid"
           >

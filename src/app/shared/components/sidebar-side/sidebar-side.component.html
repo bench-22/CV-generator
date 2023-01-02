@@ -1,0 +1,76 @@
+<!--<div class="sidebar-panel">-->
+<!--  <div-->
+<!--    id="scroll-area"-->
+<!--    [perfectScrollbar]-->
+<!--    class="navigation-hold"-->
+<!--    fxLayout="column"-->
+<!--  >-->
+<!--    <div class="sidebar-hold">-->
+<!--      <div class="branding">-->
+<!--        <img src="assets/images/LogoERPBlue.png" alt="" class="app-logo" />-->
+<!--        <span class="app-logo-text">URUIT</span>-->
+
+<!--        <span-->
+<!--          style="margin: auto"-->
+<!--          *ngIf="layoutConf.sidebarStyle !== 'compact'"-->
+<!--        ></span>-->
+<!--        <div-->
+<!--          class="sidebar-compact-switch"-->
+<!--          [ngClass]="{ active: layoutConf.sidebarCompactToggle }"-->
+<!--          (click)="toggleCollapse()"-->
+<!--          *ngIf="layoutConf.sidebarStyle !== 'compact'"-->
+<!--        >-->
+<!--          <span></span>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="app-user">-->
+<!--        <div class="app-user-photo">-->
+<!--          <img [src]="imageUrl" class="mat-elevation-z1" alt="" />-->
+<!--        </div>-->
+<!--        <span class="app-user-name mb-8">-->
+<!--          <mat-icon class="icon-xs text-muted">lock</mat-icon>-->
+<!--          {{ userName }}-->
+<!--        </span>-->
+<!--        <div class="app-user-controls">-->
+<!--          <button-->
+<!--            class="text-muted"-->
+<!--            mat-icon-button-->
+<!--            mat-xs-button-->
+<!--            matTooltip="Perfil"-->
+<!--            [routerLink]="goTo()"-->
+<!--          >-->
+<!--            <mat-icon>manage_accounts</mat-icon>-->
+<!--          </button>-->
+<!--          <button-->
+<!--            class="text-muted"-->
+<!--            mat-icon-button-->
+<!--            mat-xs-button-->
+<!--            matTooltip="Clientes"-->
+<!--            (click)="searchClientService.changeClientsDialog()"-->
+<!--          >-->
+<!--            <mat-icon>assignment_ind</mat-icon>-->
+<!--          </button>-->
+<!--          <button-->
+<!--            class="text-muted"-->
+<!--            mat-icon-button-->
+<!--            mat-xs-button-->
+<!--            matTooltip="Cerrar Sesion"-->
+<!--            (click)="firebase.signOut()"-->
+<!--          >-->
+<!--            <mat-icon>exit_to_app</mat-icon>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <span class="app-user-name mt-8">-->
+<!--          {{ clientName }}-->
+<!--        </span>-->
+<!--      </div>-->
+<!--      <app-sidenav-->
+<!--        [items]="menuItems"-->
+<!--        [hasIconMenu]="hasIconTypeMenuItem"-->
+<!--        [iconMenuTitle]="iconTypeMenuTitle"-->
+<!--      >-->
+<!--      </app-sidenav>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

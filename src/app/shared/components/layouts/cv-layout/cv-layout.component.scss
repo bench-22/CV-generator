@@ -1,0 +1,56 @@
+@import "./../../../../../assets/styles/scss/colors/app-colors";
+
+mat-sidenav {
+  background: $uit-green-dark;
+}
+
+mat-divider {
+  background: $uit-pai
+}
+
+mat-toolbar {
+  border-bottom: 0.5px solid $uit-green-light;
+}
+
+mat-sidenav-content {
+  height: 100%!important;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: $uit-green-dark;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+a::ng-deep span {
+  color: $uit-pai!important;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.b-w {
+  color: $uit-pai;
+}
+
+.b-border-color {
+  border-left: 2px solid $uit-green-light;
+
+  .b-w {
+    color: $uit-green-light;
+  }
+}

@@ -8,6 +8,8 @@ import {ClassValidator} from "../../../shared/validators/email";
 import {UserCredential} from "@angular/fire/auth";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../../../shared/services/loader.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {LoginConfig as Config} from "./login.component.meta";
 
 @Component({
   selector: 'app-login',
@@ -23,17 +25,14 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private _disposed$ = new Subject<void>();
 
-  //no pienso usar nada de estop
-  errorMsg = '';
-  cargado = false;
-
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _fb: FormBuilder,
     private _firebase: FirebaseService,
     private _loader: LoaderService,
-    private _router: Router
+    private _router: Router,
+    private _snackBar: MatSnackBar
   ) {
   }
 
@@ -52,22 +51,19 @@ export class LoginComponent implements OnInit, OnDestroy {
     this._firebase.signIn(username, password)
       .then(async (fireUser: UserCredential) => {
         this._loader.close();
-        console.log(fireUser);
         const {user} = fireUser;
         if (user.emailVerified) {
-          console.log('Email verificado, esta autenticado');
           sessionStorage.setItem('email', user.email ?? '');
-          await this._router.navigate([''], {relativeTo: this._activatedRoute})
+          sessionStorage.setItem('user', JSON.stringify(user));
+          await this._router.navigate(['../../cv/module/admin'], {relativeTo: this._activatedRoute})
         } else {
-          //mostrar error de email no verificado
+          this._snackBar.open(Config.notifications.error_email_verify, "CERRAR", {duration: 4000});
         }
       }).catch(async (err: any) => {
       this._loader.close();
-      console.log(err);
-      //mostrar error de usuario no valido
+      this._snackBar.open(Config.notifications.error_user, "CERRAR", {duration: 4000});
     })
   }
-
 
   private async _initialize() {
     this.formGroup = this._fb.group({

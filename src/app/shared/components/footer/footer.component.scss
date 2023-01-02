@@ -1,0 +1,13 @@
+@import "./../../../../assets/styles/scss/colors/app-colors";
+footer {
+  color: $uit-pai;
+  position: fixed;
+  bottom: 0;
+  background: $uit-green-dark;
+  width: -webkit-fill-available;
+}
+
+div {
+  display: flex;
+  justify-content: flex-end;
+}
