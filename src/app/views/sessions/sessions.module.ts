@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { SessionsRoutingModule } from './sessions-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -19,12 +19,13 @@ import {SharedMaterialModule} from "../../shared/modules/shared-material.module"
     NotFoundComponent,
     ErrorComponent
   ],
-  imports: [
-    CommonModule,
-    SessionsRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedMaterialModule
-  ]
+    imports: [
+        CommonModule,
+        SessionsRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        SharedMaterialModule,
+        NgOptimizedImage
+    ]
 })
 export class SessionsModule { }

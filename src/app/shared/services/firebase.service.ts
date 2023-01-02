@@ -123,11 +123,10 @@ export class FirebaseService {
   //   });
   // }
 
-  // signOut(navigate = true): void {
-  //   signOut(this.auth).then(() => {
-  //     sessionStorage.clear()
-  //     this.sessionService.clearAll()
-  //     navigate && this.router.navigate(['/sessions/signin'])
-  //   })
-  // }
+  signOut(navigate = true): void {
+    signOut(this.auth).then(() => {
+      sessionStorage.clear()
+      navigate && this._router.navigate(['/sessions/login'])
+    })
+  }
 }

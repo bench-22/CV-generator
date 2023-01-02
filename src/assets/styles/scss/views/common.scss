@@ -1,3 +1,5 @@
+@import "../colors/app-colors";
+
 //padding
 .pb-16 {
   padding-bottom: 16px;
@@ -202,7 +204,11 @@
 
 //class generic
 .border-radius-10 {
-  border-radius: 10px;
+  border-radius: 10px!important;
+}
+
+.border-radius-20 {
+  border-radius: 20px!important;
 }
 
 .form {
@@ -231,4 +237,9 @@ a {
 button {
   //background-color: #7C57F4!important;
   //color: white;
+}
+
+mat-card-content {
+  background: $uit-pai;
+  @extend .border-radius-20
 }

@@ -1,2 +1,17 @@
 @import "sessions";
 @import "common";
+@import "layout";
+@import "variables";
+@import "footer";
+@import "palette";
+
+
+.topbar-button-right {
+  margin: 0 0.5rem !important;
+}
+
+.mat-icon-button.img-button img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
