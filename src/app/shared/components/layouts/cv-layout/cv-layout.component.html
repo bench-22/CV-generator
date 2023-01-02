@@ -1,0 +1,51 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <div class="center-contect">
+        <img
+          width="130px"
+          src="assets/images/logo/logoDash.png"
+          alt="Logo"
+        />
+      </div>
+    </mat-toolbar>
+    <mat-nav-list>
+      <button [ngClass]="selectedItem === element.state ? 'b-border-color' : ''" mat-menu-item
+              *ngFor="let element of menu" [routerLink]="element.state">
+        <mat-icon class="b-w">{{element.icon}}</mat-icon>
+        <span class="b-w">{{element.name}}</span>
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="accountMenu" class="topbar-button-right img-button">
+        <img [src]="imageUrl" alt=""/>
+      </button>
+      <mat-menu #accountMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>manage_accounts</mat-icon>
+          <span>Perfil</span>
+        </button>
+        <button mat-menu-item (click)="firebase.signOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Cerrar sesión</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
