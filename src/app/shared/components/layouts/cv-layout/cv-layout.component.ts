@@ -20,13 +20,15 @@ export class CvLayoutComponent implements OnInit {
   imageUrl: string = 'assets/images/avatars/mentor.png';
   selectedItem: string = '';
 
+
+  //ESRTO NO PUEDE ESTAR ACA DEBE VENIR DEL SERVICIO
   menu = [
     {
-      name: 'Dashboard',
+      name: 'Inicio',
       type: 'link',
       tooltip: 'Resumen',
       icon: 'dashboard',
-      state: `dashboard`,
+      state: `/cv/module/admin/dashboard`,
       action: '*'
     },
     {
@@ -34,15 +36,15 @@ export class CvLayoutComponent implements OnInit {
       type: 'link',
       tooltip: 'Listado de empresas',
       icon: 'playlist_add',
-      state: `cv-list`,
+      state: `/cv/module/admin/cv/list`,
       action: '*'
     },
     {
-      name: 'Configuracion',
+      name: 'Configuración',
       type: 'link',
       tooltip: 'Configuracion',
       icon: 'settings',
-      state: `config`,
+      state: `/cv/module/admin/config/index`,
       action: '*'
     },
   ]
@@ -63,10 +65,7 @@ export class CvLayoutComponent implements OnInit {
   ngOnInit(): void {
     this.setItemMenu();
     this.changeItemSelectedInMenu();
-    console.log(this.actRoute.snapshot);
     this.actRoute.children[0].url.subscribe(res => console.log(res[0].path));
-    const nav = this.router.getCurrentNavigation()?.finalUrl;
-    console.log(nav)
   }
 
   changeItemSelectedInMenu() {
@@ -77,7 +76,7 @@ export class CvLayoutComponent implements OnInit {
   }
 
   setItemMenu() {
-    this.actRoute.children[0].url.subscribe(res => this.selectedItem = res[0].path);
+    this.selectedItem = this.router.url;
   }
 
 }

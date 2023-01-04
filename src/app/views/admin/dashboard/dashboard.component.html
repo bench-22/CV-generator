@@ -1,14 +1,67 @@
-<mat-card class="border-radius-10">
-  <mat-card-content>
-    <div class="center-contect">
-      <img
-        width="150px"
-        src="assets/images/logo/image.png"
-        alt="Logo"
-      />
+<div class="container">
+  <div
+    class="p-0"
+    [@animate]="{ value: '*', params: { y: '50px', delay: '300ms' } }"
+  >
+    <div class="flex-container">
+      <div>
+        <!--       *ngIf="!loadingCards; else cardSkeleton"-->
+        <uit-card
+          *ngIf="true; else cardSkeleton"
+          icon="group"
+          title="Usuarios activos"
+          leftText="Acceso al sistema"
+          [total]="'10'"
+          [leftNumber]="'5'"
+          [leftBatch]="'50' + '%'"
+        ></uit-card>
+      </div>
+      <div>
+        <uit-card
+          *ngIf="true; else cardSkeleton"
+          icon="group"
+          title="Usuarios activos"
+          leftText="Acceso al sistema"
+          [total]="'10'"
+          [leftNumber]="'5'"
+          [leftBatch]="'50' + '%'"
+        ></uit-card>
+      </div>
+      <div>
+        <uit-card
+          *ngIf="true; else cardSkeleton"
+          icon="group"
+          title="Usuarios activos"
+          leftText="Acceso al sistema"
+          [total]="'10'"
+          [leftNumber]="'5'"
+          [leftBatch]="'50' + '%'"
+        ></uit-card>
+      </div>
     </div>
-    <div class="text-center">
-      <h1>HOLA SOY EL DASHBOARD</h1>
+
+    <div class="flex-container mt-16 pt-16">
+      <uit-doughnut-chart></uit-doughnut-chart>
+      <uit-line-chart></uit-line-chart>
+      <uit-doughnut-chart></uit-doughnut-chart>
     </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>
+
+<!--Scheletons podemos hacerlo un componente indepenediente-->
+<ng-template #cardSkeleton>
+  <mat-card>
+    <ngx-skeleton-loader count="1"></ngx-skeleton-loader>
+    <ngx-skeleton-loader
+      style="align-self: center"
+      [theme]="{
+              height: '65px',
+              width: '65px'
+            }"
+      count="1"
+      appearance="circle"
+    ></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="2"></ngx-skeleton-loader>
+  </mat-card>
+</ng-template>
+

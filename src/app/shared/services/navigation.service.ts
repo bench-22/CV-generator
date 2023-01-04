@@ -98,9 +98,9 @@ export class NavigationService {
           {
             name: 'Lista CV',
             type: 'link',
-            tooltip: 'Listado de empresas',
-            icon: 'business',
-            state: `${url_admin}/cv-list`,
+            tooltip: 'Listado de CV',
+            icon: 'list',
+            state: `${url_admin}/cv/list`,
             action: '*'
           },
           {

@@ -15,3 +15,19 @@
   height: 32px;
   border-radius: 50%;
 }
+
+mat-card {
+  height: calc(100% - 100px) !important;
+}
+
+.container {
+  height: 100%;
+  padding: 1rem;
+  background-color: white;
+}
+
+.parent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
