@@ -1,0 +1,58 @@
+@import "./../../../../assets/styles/scss/app";
+
+.card {
+  width: 20rem;
+  max-width: 25rem!important;
+  max-height: 20rem;
+  min-width: 15rem!important;
+  min-height: 5rem;
+
+  h1 {
+    font-size: x-large;
+  }
+
+  h2 {
+    font-size: xx-large;
+    text-align: center;
+    color: $uit-violet;
+  }
+
+  .div-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center {
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    margin-top: 1rem;
+  }
+
+  .text {
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .number {
+    font-size: large;
+  }
+}
+
+mat-card-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+mat-icon {
+  position: absolute;
+}
+
+mat-chip::ng-deep div {
+  //background: $uit-violet;
+  //color: white;
+}
