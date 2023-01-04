@@ -1,0 +1,29 @@
+<mat-card class="border-radius-20 card">
+  <mat-card-content>
+    <mat-card-title>
+      <mat-icon color="primary">{{icon}}</mat-icon>
+      <div>
+        <h1>{{title}}</h1>
+        <h2 color="primary">{{total}}</h2>
+      </div>
+    </mat-card-title>
+
+    <div class="div-content">
+      <div class="bottom-section" *ngIf="leftText || leftNumber || leftBatch">
+        <span class="text">{{leftText}}</span>
+        <div class="center">
+          <span class="number">{{leftNumber}}</span>
+          <mat-chip selected>{{leftBatch}}</mat-chip>
+        </div>
+      </div>
+
+      <div class="bottom-section" *ngIf="rightText || rightNumber || rightBatch">
+        <span class="text">{{rightText}}</span>
+        <div class="center">
+          <span class="number">{{rightNumber}}</span>
+          <mat-chip selected *ngIf="rightBatch">{{rightBatch}}</mat-chip>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
